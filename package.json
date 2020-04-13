@@ -1,0 +1,27 @@
+{
+  "name": "simplerest",
+  "version": "1.0.0",
+  "description": "Simple REST API for developing use",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IBlasterus/express_simple_rest.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "simple",
+    "rest",
+    "api",
+    "nodejs",
+    "js",
+    "express",
+    "framework"
+  ],
+  "author": "Aleksandr Chernyi <iblasterus@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
