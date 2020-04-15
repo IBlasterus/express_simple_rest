@@ -1,6 +1,20 @@
 const express = require("express");
+const basicAuth = require('express-basic-auth');
 const app = express();
 const jsonParser = express.json();
+
+app.use(basicAuth({
+    users: {'testUser': 'testPassword'}, // Login and password
+    unauthorizedResponse: getUnauthorizedResponse
+}));
+
+function getUnauthorizedResponse(req) {
+    let response = {
+        resp_status: 'error',
+        error: 'Unauthorized'
+    };
+    return response;
+}
 
 app.post("/calls/events", jsonParser, (req, res, next) => {
     console.log(req.body);
