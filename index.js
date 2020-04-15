@@ -3,6 +3,9 @@ const basicAuth = require('express-basic-auth');
 const app = express();
 const jsonParser = express.json();
 
+const logger = require('rufus');
+logger.addHandler(new logger.handlers.File('simplerest.log'));
+
 app.use(basicAuth({
     users: {'testUser': 'testPassword'}, // Login and password
     unauthorizedResponse: getUnauthorizedResponse
@@ -18,6 +21,7 @@ function getUnauthorizedResponse(req) {
 
 app.post("/calls/events", jsonParser, (req, res, next) => {
     console.log(req.body);
+    logger.info(req.body);
 
     let response = {
         resp_status: 'ok',
