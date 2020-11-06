@@ -6,10 +6,10 @@ const jsonParser = express.json();
 const logger = require('rufus');
 logger.addHandler(new logger.handlers.File('simplerest.log'));
 
-app.use(basicAuth({
+/*app.use(basicAuth({
     users: {'testUser': 'testPassword'}, // Login and password
     unauthorizedResponse: getUnauthorizedResponse
-}));
+}));*/
 
 function getUnauthorizedResponse(req) {
     let response = {
@@ -19,7 +19,7 @@ function getUnauthorizedResponse(req) {
     return response;
 }
 
-app.post("/calls/events", jsonParser, (req, res, next) => {
+app.post("*", jsonParser, (req, res, next) => {
     console.log(req.body);
     logger.info(req.body);
 
