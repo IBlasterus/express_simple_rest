@@ -22,7 +22,7 @@
   "author": "Aleksandr Chernyi <iblasterus@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-basic-auth": "^1.2.0",
     "rufus": "^0.5.7"
   }
